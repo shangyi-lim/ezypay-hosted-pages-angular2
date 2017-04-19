@@ -1,0 +1,23 @@
+<h2>One time setup for Payment Form Id</h2>
+<p>
+
+Generate the usual access token and call the 
+{{'https://iam-'+env+'.ezypay.com/v2/hostedpages'}} with the access token to get a payment form id. This payment form id doesn not change.
+</p>
+
+<div style="height:800px">
+  <div>
+    <label for="paymentFormId">Payment Form Id:</label>
+    <input id="paymentFormId" type="text" [(ngModel)]="paymentFormId" />
+    <button (click)="loadForm()">Load Form</button>
+  </div>
+  <iframe #paymentIframe *ngIf="hostedPagesUrl" [src]="hostedPagesUrl | urlSanitize" style="width:100%;height:100%;border:none"></iframe>
+  <button *ngIf="hostedPagesUrl" (click)="submitHostedPage()">Submit</button>
+  <button *ngIf="hostedPagesUrl" (click)="cancel()">Cancel</button>
+
+  <div *ngIf="createdPaymentMethod">
+    <h2>Created Payment Method: </h2>
+    {{createdPaymentMethod | json}}
+  </div>
+  {{errorMessage}}
+</div>
