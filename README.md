@@ -1,6 +1,10 @@
 # EzypayHostedPaymentExample
 
 ## Setup
+1. Make sure you have node set-up.
+2. Run: `npm install`
+4. Install Angular CLI 'npm install -g @angular/cli' 
+
 Please generate a payment form id, and save it in application configuration. How to generate payment form id can be found [here](https://ezypay.atlassian.net/wiki/display/frontend/How+to+embed+payment+form)
 
 ## Development server
